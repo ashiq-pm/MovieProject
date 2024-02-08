@@ -1,0 +1,54 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        .btn{
+            width: 254px;
+        }
+        .card{
+            background-color: #03787D;
+            margin-top: 50px;
+            min-width: 16rem;
+            max-width: 16rem;
+            min-height: 20rem;
+            max-height: 20rem;
+        }
+        .card img{
+            min-width: 16rem;
+            max-width: 16rem;
+            min-height: 15rem;
+            max-height: 15rem;
+        }
+        .card-title{
+            color:#fff;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        {% for i in movie_list %}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+                <img src="{{i.img.url}}" width="254px" height="250px">
+                <div>
+                    <center><h5 class="card-title">{{i.name}}</h5></center>
+                    <a href="{% url 'movieapp:details' i.id %}" class="btn btn-warning">Open</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

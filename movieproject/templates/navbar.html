@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .btn{
+        background-color: #34B9BF;
+        color: black;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark">
+  <h1 style="color:#5DD8DD;">movies</h1>
+    <a class="btn" href="{% url 'movieapp:add' %}">ADD MOVIE</a>
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>
